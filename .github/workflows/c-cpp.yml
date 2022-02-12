@@ -1,0 +1,30 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Bazel
+      # You may pin to the exact commit or the version.
+      # uses: abhinavsingh/setup-bazel@1fe920bf5df3791aab606c06a3608f4bb600c4f2
+      uses: abhinavsingh/setup-bazel@v3
+      with:
+        # Bazel version to install e.g. 1.2.1, 2.0.0, ...
+        version: 1.0.0
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: ls
+      run: |
+        ls -lah /home/runner/work/nameservice_cpp/nameservice_cpp/
+    - name: build
+      run: |
+         bazel build //:name_c++_server
+      

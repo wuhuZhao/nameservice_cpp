@@ -25,6 +25,7 @@ message HttpResponse {};
 
 service HttpService {
   rpc addName2Ip(HttpRequest) returns (HttpResponse);
+  rpc getName2Ip(HttpRequest) returns (HttpResponse);
 };
 
 

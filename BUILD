@@ -28,12 +28,21 @@ cc_proto_library(
 )
 
 cc_library(
+    name = "redis",
+    srcs = ["datasource/redis_utils.cpp"],
+    hdrs = ["datasource/redis_utils.h"],
+    deps = [
+        "@brpc//:brpc",
+    ]
+)
+
+cc_library(
     name = "service",
     srcs = ["service/nameService.cpp"],
     hdrs = ["service/nameService.h"],
     deps = [
-        "@brpc//:brpc",
         ":nameservice",
+        ":redis",
     ]
 )
 

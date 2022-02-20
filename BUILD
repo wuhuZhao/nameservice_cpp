@@ -35,6 +35,10 @@ cc_library(
         "@brpc//:brpc",
     ]
 )
+cc_library(
+    name = "util",
+    hdrs = ["utils/string_utils.h"],
+)
 
 cc_library(
     name = "service",
@@ -43,6 +47,7 @@ cc_library(
     deps = [
         ":nameservice",
         ":redis",
+        ":util"
     ]
 )
 

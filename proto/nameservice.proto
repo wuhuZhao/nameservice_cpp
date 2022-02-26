@@ -23,9 +23,26 @@ option cc_generic_services = true;
 message HttpRequest {};
 message HttpResponse {};
 
+message RpcResponse {
+  string data = 1;
+  string msg = 2;
+  int32 code = 3;
+};
+
+message RpcRequest {
+  string name = 1;
+  string host = 2;
+}
+
 service HttpService {
   rpc addName2Ip(HttpRequest) returns (HttpResponse);
   rpc getName2Ip(HttpRequest) returns (HttpResponse);
+  rpc updateName2Ip(HttpRequest) returns (HttpResponse);
+  rpc deleteName2Ip(HttpRequest) returns (HttpResponse);
+  rpc addName2IpRpc(RpcRequest) returns (RpcResponse);
+  rpc getName2IpRpc(RpcRequest) returns (RpcResponse);
+  rpc updateName2IpRpc(RpcRequest) returns (RpcResponse);
+  rpc deleteName2IpRpc(RpcRequest) returns (RpcResponse);
 };
 
 

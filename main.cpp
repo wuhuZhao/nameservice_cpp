@@ -18,7 +18,9 @@ int main(int argc, char* argv[]) {
     if (server.AddService(&http_svc,
                           brpc::SERVER_DOESNT_OWN_SERVICE,
                           "/v1/nameservice/add => addName2Ip,"
-                          "/v1/nameservice/search => getName2Ip"
+                          "/v1/nameservice/search => getName2Ip,"
+                          "/v1/nameservice/update => updateName2Ip,"
+                          "/v1/nameservice/delete => deleteName2Ip"
                           ) != 0) {
         LOG(ERROR) << "Fail to add http_svc";
         return -1;

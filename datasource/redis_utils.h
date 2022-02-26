@@ -9,8 +9,10 @@ namespace nameService
         int set(std::string &key, std::string &value);
         int get(std::string &key, std::string &value);
         int setSet(std::string &key, std::string &value);
-        int setSet(std::string &key, std::unordered_set<std::string>& set);
+        int setSet(std::string &key, std::unordered_set<std::string> &set);
         int getSet(std::string &key, std::unordered_set<std::string> &set);
+        int deleteSet(std::string &key, std::unordered_set<std::string> &set);
+        int updateSet(std::string &key, std::unordered_set<std::string> &set);
         RedisImpl()
         {
             brpc::ChannelOptions redis_options;

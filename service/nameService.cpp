@@ -1,5 +1,6 @@
 #include "nameService.h"
 #include "utils/string_utils.h"
+#include <json2pb/rapidjson.h>
 namespace nameService
 {
     void NameServiceImpl::addName2Ip(google::protobuf::RpcController *cntl_base,
@@ -10,40 +11,25 @@ namespace nameService
         brpc::ClosureGuard done_guard(done);
         brpc::Controller *cntl = static_cast<brpc::Controller *>(cntl_base);
         cntl->http_response().set_content_type("application_json");
-        std::pair<std::string, std::unordered_set<std::string>> nameToHostPair;
-        for (auto it = cntl->http_request().uri().QueryBegin();
-             it != cntl->http_request().uri().QueryEnd(); ++it)
+        auto body = cntl->request_attachment().to_string();
+        butil::rapidjson::Document document;
+        document.Parse(body.c_str());
+        std::string name = document["name"].GetString();
+        auto hostVec = util::split(document["host"].GetString(), ';');
+        std::unordered_set<std::string> hostSet;
+        for (auto host : hostVec)
         {
-            if (it->first == "name")
-            {
-                nameToHostPair.first = it->second;
-            }
-            else if (it->first == "host")
-            {
-                const std::string &hostList = it->second;
-                auto hostVec = util::split(hostList, ';');
-                std::unordered_set<std::string> hostSet;
-                for (auto host : hostVec)
-                {
-                    hostSet.emplace(host);
-                }
-                nameToHostPair.second = hostSet;
-            }
-            else
-            {
-                continue;
-            }
+            hostSet.emplace(host);
         }
-        // auto body = cntl->request_attachment();
         butil::IOBufBuilder os;
-        if (nameToHostPair.first.size() == 0 || nameToHostPair.second.size() == 0)
+        if (name.size() == 0 || hostVec.size() == 0)
         {
             os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
                << "\n";
             os.move_to(cntl->response_attachment());
             return;
         }
-        int ret = redisImpl.get()->setSet(nameToHostPair.first, nameToHostPair.second);
+        int ret = redisImpl.get()->setSet(name, hostSet);
         if (ret == -1)
         {
             os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
@@ -97,6 +83,85 @@ namespace nameService
             }
             os << data << "]\", \"msg\": \"Success\", \"code\": 200}"
                << "\n";
+        }
+        os.move_to(cntl->response_attachment());
+        return;
+    };
+
+    void NameServiceImpl::updateName2Ip(google::protobuf::RpcController *cntl_base,
+                       const nameService::HttpRequest *,
+                       const nameService::HttpResponse *,
+                       google::protobuf::Closure *done){
+        brpc::ClosureGuard done_guard(done);
+        brpc::Controller *cntl = static_cast<brpc::Controller*>(cntl_base);
+        cntl->http_response().set_content_type("application_json");
+        auto body = cntl->request_attachment().to_string();
+        butil::rapidjson::Document document;
+        document.Parse(body.c_str());
+        std::string name = document["name"].GetString();
+                auto hostVec = util::split(document["host"].GetString(), ';');
+        std::unordered_set<std::string> hostSet;
+        for (auto host : hostVec)
+        {
+            hostSet.emplace(host);
+        }
+        butil::IOBufBuilder os;
+        if (name.size() == 0 || hostSet.size() == 0)
+        {
+            os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
+               << "\n";
+            os.move_to(cntl->response_attachment());
+            return;
+        }
+        int ret = redisImpl.get()->updateSet(name, hostSet);
+        if (ret == -1)
+        {
+            os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
+               << "\n";
+        }
+        else
+        {
+            os << "{ \"data\": null, \"msg\": \"Success\", \"code\": 200 }" << '\n';
+        }
+        os.move_to(cntl->response_attachment());
+        return;
+
+    };
+    void NameServiceImpl::deletename2Ip(google::protobuf::RpcController *cntl_base,
+                       const nameService::HttpRequest *,
+                       const nameService::HttpResponse *,
+                       google::protobuf::Closure *done)
+    {
+        brpc::ClosureGuard done_guard(done);
+        brpc::Controller *cntl = static_cast<brpc::Controller *>(cntl_base);
+        cntl->http_response().set_content_type("application_json");
+        auto body = cntl->request_attachment().to_string();
+        butil::rapidjson::Document document;
+        document.Parse(body.c_str());
+        std::string name = document["name"].GetString();
+        auto hostVec = util::split(document["host"].GetString(), ';');
+        std::unordered_set<std::string> hostSet;
+        for (auto host : hostVec)
+        {
+            hostSet.emplace(host);
+        }
+        butil::IOBufBuilder os;
+        if (name.size() == 0 || hostSet.size() == 0)
+        {
+            os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
+               << "\n";
+            os.move_to(cntl->response_attachment());
+            return;
+        }
+        int ret = redisImpl.get()->deleteSet(name, hostSet);
+        if (ret == -1)
+        {
+            os << "{\"data\": null, \"msg\": \"Fail\", \"code\": -1}"
+               << "\n";
+        }
+        else
+        {
+            os << "{ \"data\": null, \"msg\": \"Success\", \"code\": 200 }" << '\n';
         }
         os.move_to(cntl->response_attachment());
         return;

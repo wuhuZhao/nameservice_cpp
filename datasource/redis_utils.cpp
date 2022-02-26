@@ -118,3 +118,44 @@ int nameService::RedisImpl::getSet(std::string &key, std::unordered_set<std::str
     }
     return ret;
 }
+
+/**
+ * @brief 删除set中多个value
+ * 
+ * @param key 
+ * @param set 
+ * @return int 
+ */
+int nameService::RedisImpl::deleteSet(std::string& key,std::unordered_set<std::string> &set) {
+    brpc::Controller cntl;
+    brpc::RedisRequest set_request;
+    brpc::RedisResponse response;
+    for (auto it  = set.begin(); it != set.end(); it++) set_request.AddCommand("SREM %s %s", key.c_str(), it->c_str());
+    redis_channel.CallMethod(nullptr, &cntl, &set_request, &response, nullptr);
+    if (cntl.Failed()) {
+        LOG(ERROR) << "Fail to access redis-server" << "\n";
+        return -1;
+    }
+    int ret = response.reply_size();
+    return ret;
+}
+
+/**
+ * @brief 更新set，首先先查询所有的value，然后删除所有的value,最后再重新插入
+ * 
+ * @param key 
+ * @param set 
+ * @return int 
+ */
+int nameService::RedisImpl::updateSet(std::string& key, std::unordered_set<std::string> &set) {
+    std::unordered_set<std::string> alreadyHasValue;
+    getSet(key, alreadyHasValue);
+    if (alreadyHasValue.size() == 0) {
+        return -1;
+    }
+    int ret = deleteSet(key, alreadyHasValue);
+    if (ret == -1) {
+        return ret;
+    }
+    return setSet(key, set);
+}

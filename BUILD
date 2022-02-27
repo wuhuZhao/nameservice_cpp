@@ -37,7 +37,8 @@ cc_library(
 )
 cc_library(
     name = "util",
-    hdrs = ["utils/string_utils.h"],
+    hdrs = ["utils/string_utils.h",
+            "utils/response_utils.h"],
 )
 
 cc_library(

@@ -27,6 +27,28 @@ cc_proto_library(
     ]
 )
 
+proto_library(
+    name = "nameservice_store_proto",
+    srcs = [
+        "proto/nameservice_store.proto"
+    ]
+)
+
+cc_proto_library(
+    name = "nameservice_store",
+    deps = [
+        ":nameservice_store_proto"
+    ]
+)
+
+cc_library(
+    name = "proxy",
+    hdrs = ["proxy/NameServiceStoreProxy.h"],
+    deps = [
+        ":nameservice_store"
+    ]
+)
+
 cc_library(
     name = "redis",
     srcs = ["datasource/redis_utils.cpp"],
@@ -48,7 +70,8 @@ cc_library(
     deps = [
         ":nameservice",
         ":redis",
-        ":util"
+        ":util",
+        ":proxy",
     ]
 )
 

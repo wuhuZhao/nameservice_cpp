@@ -1,0 +1,243 @@
+2022-03-06 14:54:21.265 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_BAIDU_STD success
+2022-03-06 14:54:21.310 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_PROTOBUF success
+2022-03-06 14:54:21.313 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SOFA_PBRPC success
+2022-03-06 14:54:21.316 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HULU_PBRPC success
+2022-03-06 14:54:21.317 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_JSON success
+2022-03-06 14:54:21.317 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_PROTOBUF success
+2022-03-06 14:54:21.318 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_STARGATE success
+2022-03-06 14:54:21.319 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SERVER_PUSH success
+2022-03-06 14:54:21.319 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_DUBBO success
+2022-03-06 14:54:21.319 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_JSON success
+2022-03-06 14:54:21.324 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-1
+2022-03-06 14:54:21.324 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-2
+2022-03-06 14:54:21.324 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-3
+2022-03-06 14:54:21.325 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-4
+2022-03-06 14:54:21.352 [main] INFO  com.baidu.brpc.server.CommunicationServer - use jdk nio event mode
+2022-03-06 14:54:21.371 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RandomLoadBalanceFactory success
+2022-03-06 14:54:21.371 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RoundRobinLoadBalanceFactory success
+2022-03-06 14:54:21.371 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:WeightLoadBalanceFactory success
+2022-03-06 14:54:21.372 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:FairLoadBalanceFactory success
+2022-03-06 14:54:22.013 [main] INFO  com.baidu.brpc.server.ServiceManager - register service, serviceName=service.NameServiceStore, methodName=insertOneNameService
+2022-03-06 14:54:22.037 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-acceptor-thread-1
+2022-03-06 14:54:22.040 [main] INFO  com.baidu.brpc.server.CommunicationServer - server started on port=8002 success
+2022-03-06 14:54:22.040 [main] INFO  BrpcServiceMain - brpc server start port: 8002
+2022-03-06 15:02:23.163 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-1
+2022-03-06 15:02:23.188 [server-work-thread-1] ERROR com.baidu.brpc.protocol.standard.BaiduRpcProtocol - Fail to find service=nameService.nameServiceStore, method=insertOneNameService
+2022-03-06 15:06:29.627 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - Brpc do clean work...
+2022-03-06 15:06:29.628 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - invoke shutdownGlobalThreadPools
+2022-03-06 15:06:29.631 [Thread-0] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:timeout-timer-thread-1
+2022-03-06 15:06:31.632 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-2
+2022-03-06 15:06:31.632 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-3
+2022-03-06 15:06:31.633 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-4
+2022-03-06 15:10:34.674 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_BAIDU_STD success
+2022-03-06 15:10:34.719 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_PROTOBUF success
+2022-03-06 15:10:34.722 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SOFA_PBRPC success
+2022-03-06 15:10:34.725 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HULU_PBRPC success
+2022-03-06 15:10:34.726 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_JSON success
+2022-03-06 15:10:34.726 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_PROTOBUF success
+2022-03-06 15:10:34.727 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_STARGATE success
+2022-03-06 15:10:34.728 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SERVER_PUSH success
+2022-03-06 15:10:34.728 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_DUBBO success
+2022-03-06 15:10:34.728 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_JSON success
+2022-03-06 15:10:34.733 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-1
+2022-03-06 15:10:34.733 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-2
+2022-03-06 15:10:34.734 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-3
+2022-03-06 15:10:34.734 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-4
+2022-03-06 15:10:34.763 [main] INFO  com.baidu.brpc.server.CommunicationServer - use jdk nio event mode
+2022-03-06 15:10:34.781 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RandomLoadBalanceFactory success
+2022-03-06 15:10:34.781 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RoundRobinLoadBalanceFactory success
+2022-03-06 15:10:34.781 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:WeightLoadBalanceFactory success
+2022-03-06 15:10:34.781 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:FairLoadBalanceFactory success
+2022-03-06 15:10:35.419 [main] INFO  com.baidu.brpc.server.ServiceManager - register service, serviceName=nameService.nameServiceStore, methodName=insertOneNameService
+2022-03-06 15:10:35.443 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-acceptor-thread-1
+2022-03-06 15:10:35.446 [main] INFO  com.baidu.brpc.server.CommunicationServer - server started on port=8002 success
+2022-03-06 15:10:35.446 [main] INFO  BrpcServiceMain - brpc server start port: 8002
+2022-03-06 15:10:45.788 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-1
+2022-03-06 15:10:45.830 [server-work-thread-1] WARN  com.baidu.brpc.interceptor.ServerInvokeInterceptor - invoke method failed, msg=
+### Error updating database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+### Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+### Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:200)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:56)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy0.insert(Unknown Source)
+	at service.impl.NameServiceStoreImpl.insertOneLine(NameServiceStoreImpl.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.baidu.brpc.interceptor.ServerInvokeInterceptor.aroundProcess(ServerInvokeInterceptor.java:32)
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:41)
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:36)
+	at com.baidu.brpc.interceptor.ServerTraceInterceptor.aroundProcess(ServerTraceInterceptor.java:41)
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:41)
+	at com.baidu.brpc.server.InterceptCommunicationServer.execute(InterceptCommunicationServer.java:51)
+	at com.baidu.brpc.server.handler.ServerWorkTask.run(ServerWorkTask.java:70)
+	at com.baidu.brpc.server.handler.DecodeWorkTask.run(DecodeWorkTask.java:136)
+	at com.baidu.brpc.utils.ThreadPool.consume(ThreadPool.java:131)
+	at com.baidu.brpc.utils.ThreadPool.access$000(ThreadPool.java:37)
+	at com.baidu.brpc.utils.ThreadPool$1.run(ThreadPool.java:79)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.initializeDriver(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:200)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	... 22 common frames omitted
+2022-03-06 15:13:15.880 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - Brpc do clean work...
+2022-03-06 15:13:15.882 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - invoke shutdownGlobalThreadPools
+2022-03-06 15:13:15.885 [Thread-0] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:timeout-timer-thread-1
+2022-03-06 15:13:17.886 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-2
+2022-03-06 15:13:17.886 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-3
+2022-03-06 15:13:17.887 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-4
+2022-03-06 15:14:36.157 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_BAIDU_STD success
+2022-03-06 15:14:36.205 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_PROTOBUF success
+2022-03-06 15:14:36.208 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SOFA_PBRPC success
+2022-03-06 15:14:36.211 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HULU_PBRPC success
+2022-03-06 15:14:36.212 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_JSON success
+2022-03-06 15:14:36.213 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_PROTOBUF success
+2022-03-06 15:14:36.214 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_STARGATE success
+2022-03-06 15:14:36.215 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SERVER_PUSH success
+2022-03-06 15:14:36.216 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_DUBBO success
+2022-03-06 15:14:36.216 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_JSON success
+2022-03-06 15:14:36.221 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-1
+2022-03-06 15:14:36.221 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-2
+2022-03-06 15:14:36.222 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-3
+2022-03-06 15:14:36.222 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-4
+2022-03-06 15:14:36.252 [main] INFO  com.baidu.brpc.server.CommunicationServer - use jdk nio event mode
+2022-03-06 15:14:36.271 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RandomLoadBalanceFactory success
+2022-03-06 15:14:36.271 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RoundRobinLoadBalanceFactory success
+2022-03-06 15:14:36.272 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:WeightLoadBalanceFactory success
+2022-03-06 15:14:36.272 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:FairLoadBalanceFactory success
+2022-03-06 15:14:36.906 [main] INFO  com.baidu.brpc.server.ServiceManager - register service, serviceName=nameService.nameServiceStore, methodName=insertOneNameService
+2022-03-06 15:14:36.932 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-acceptor-thread-1
+2022-03-06 15:14:36.934 [main] INFO  com.baidu.brpc.server.CommunicationServer - server started on port=8002 success
+2022-03-06 15:14:36.935 [main] INFO  BrpcServiceMain - brpc server start port: 8002
+2022-03-06 15:14:40.652 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-1
+2022-03-06 15:14:40.685 [server-work-thread-1] WARN  com.baidu.brpc.interceptor.ServerInvokeInterceptor - invoke method failed, msg=
+### Error updating database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+### Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+org.apache.ibatis.exceptions.PersistenceException: 
+### Error updating database.  Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+### Cause: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:200)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:56)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy0.insert(Unknown Source)
+	at service.impl.NameServiceStoreImpl.insertOneLine(NameServiceStoreImpl.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.baidu.brpc.interceptor.ServerInvokeInterceptor.aroundProcess(ServerInvokeInterceptor.java:32)
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:41)
+	at com.baidu.brpc.interceptor.AbstractInterceptor.aroundProcess(AbstractInterceptor.java:36)
+	at com.baidu.brpc.interceptor.ServerTraceInterceptor.aroundProcess(ServerTraceInterceptor.java:41)
+	at com.baidu.brpc.interceptor.DefaultInterceptorChain.intercept(DefaultInterceptorChain.java:41)
+	at com.baidu.brpc.server.InterceptCommunicationServer.execute(InterceptCommunicationServer.java:51)
+	at com.baidu.brpc.server.handler.ServerWorkTask.run(ServerWorkTask.java:70)
+	at com.baidu.brpc.server.handler.DecodeWorkTask.run(DecodeWorkTask.java:136)
+	at com.baidu.brpc.utils.ThreadPool.consume(ThreadPool.java:131)
+	at com.baidu.brpc.utils.ThreadPool.access$000(ThreadPool.java:37)
+	at com.baidu.brpc.utils.ThreadPool$1.run(ThreadPool.java:79)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: Error setting driver on UnpooledDataSource. Cause: java.lang.ClassNotFoundException: Cannot find class: ${driver}
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.initializeDriver(UnpooledDataSource.java:221)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:200)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	... 22 common frames omitted
+2022-03-06 15:18:04.264 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - Brpc do clean work...
+2022-03-06 15:18:04.265 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - invoke shutdownGlobalThreadPools
+2022-03-06 15:18:04.268 [Thread-0] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:timeout-timer-thread-1
+2022-03-06 15:18:06.269 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-2
+2022-03-06 15:18:06.270 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-3
+2022-03-06 15:18:06.270 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-4
+2022-03-06 15:18:57.374 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_BAIDU_STD success
+2022-03-06 15:18:57.419 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_PROTOBUF success
+2022-03-06 15:18:57.421 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SOFA_PBRPC success
+2022-03-06 15:18:57.424 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HULU_PBRPC success
+2022-03-06 15:18:57.425 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_JSON success
+2022-03-06 15:18:57.425 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_NSHEAD_PROTOBUF success
+2022-03-06 15:18:57.426 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_STARGATE success
+2022-03-06 15:18:57.427 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_SERVER_PUSH success
+2022-03-06 15:18:57.428 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_DUBBO success
+2022-03-06 15:18:57.428 [main] INFO  com.baidu.brpc.protocol.ProtocolManager - register protocol:PROTOCOL_HTTP_JSON success
+2022-03-06 15:18:57.432 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-1
+2022-03-06 15:18:57.432 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-2
+2022-03-06 15:18:57.433 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-3
+2022-03-06 15:18:57.433 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-work-thread-4
+2022-03-06 15:18:57.462 [main] INFO  com.baidu.brpc.server.CommunicationServer - use jdk nio event mode
+2022-03-06 15:18:57.481 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RandomLoadBalanceFactory success
+2022-03-06 15:18:57.482 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:RoundRobinLoadBalanceFactory success
+2022-03-06 15:18:57.482 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:WeightLoadBalanceFactory success
+2022-03-06 15:18:57.482 [main] INFO  com.baidu.brpc.loadbalance.LoadBalanceManager - register load balance factory:FairLoadBalanceFactory success
+2022-03-06 15:18:58.123 [main] INFO  com.baidu.brpc.server.ServiceManager - register service, serviceName=nameService.nameServiceStore, methodName=insertOneNameService
+2022-03-06 15:18:58.146 [main] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-acceptor-thread-1
+2022-03-06 15:18:58.149 [main] INFO  com.baidu.brpc.server.CommunicationServer - server started on port=8002 success
+2022-03-06 15:18:58.149 [main] INFO  BrpcServiceMain - brpc server start port: 8002
+2022-03-06 15:19:02.847 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-1
+2022-03-06 15:19:03.467 [server-work-thread-1] INFO  service.impl.NameServiceStoreImpl - traceId: 1646551143465, request: service_name: "grpc.test.haokai.test"
+host: "127.0.0.1:2000"
+weight: 200
+healthy: true
+, response: response {
+  code: 200
+  msg: "success"
+  traceId: "1646551143465"
+}
+
+2022-03-06 15:20:04.470 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-2
+2022-03-06 15:20:04.535 [server-work-thread-2] INFO  service.impl.NameServiceStoreImpl - traceId: 1646551204535, request: service_name: "grpc.test.haokai.test"
+host: "127.0.0.1:2000"
+weight: 200
+healthy: true
+, response: response {
+  code: 200
+  msg: "success"
+  traceId: "1646551204535"
+}
+
+2022-03-06 15:20:49.545 [server-acceptor-thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-3
+2022-03-06 15:20:49.608 [server-work-thread-3] INFO  service.impl.NameServiceStoreImpl - traceId: 1646551249608, request: service_name: "grpc.test.haokai.test"
+host: "127.0.0.1:2000"
+weight: 200
+healthy: true
+, response: response {
+  code: 200
+  msg: "success"
+  traceId: "1646551249608"
+}
+
+2022-03-06 15:21:20.694 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - Brpc do clean work...
+2022-03-06 15:21:20.695 [Thread-0] INFO  com.baidu.brpc.thread.ShutDownManager - invoke shutdownGlobalThreadPools
+2022-03-06 15:21:20.697 [Thread-0] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:timeout-timer-thread-1
+2022-03-06 15:21:22.699 [Thread-1] INFO  com.baidu.brpc.utils.CustomThreadFactory - create thread:server-io-thread-4

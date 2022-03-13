@@ -1,0 +1,64 @@
+syntax  = "proto3";
+package nameService;
+
+option cc_generic_services = true;
+
+message NameServiceTuple {
+  string host = 1;
+  int32 weight = 2;
+  bool healthy = 3;
+}
+
+message Response {
+  int32 code = 1;
+  string msg = 2;
+  string traceId = 3;
+}
+
+message InsertOneLineRequest {
+  string service_name = 1;
+  NameServiceTuple tuple = 2;
+}
+
+message InsertOneLineResponse {
+  Response response = 1;
+}
+
+message InsertAnyLineRequest {
+  string service_name = 1;
+  repeated NameServiceTuple tuples = 3;
+}
+
+message InsertAnyLineResponse {
+  Response response = 1;
+
+}
+
+message FindHostListRequest {
+  string service_name = 1;
+}
+
+message FindHostListResponse {
+  repeated NameServiceTuple tuple = 1;
+  Response response = 2;
+}
+
+message FindNameServiceRequest {
+  string host = 1;
+}
+
+message FindNameServiceResponse {
+  string service_name = 1;
+  Response response = 2;
+}
+
+service nameServiceStore {
+  // 插入单行name 2 host 的映射
+  rpc insertOneNameService(InsertOneLineRequest) returns (InsertOneLineResponse);
+  // 插入多行name 2 host 的映射
+  rpc insertAnyNameService(InsertAnyLineRequest) returns (InsertAnyLineResponse);
+  // 查询service_name 对应的多行host
+  rpc findHostList(FindHostListRequest) returns (FindHostListResponse);
+  // 根据host 查询对应的service_name
+  rpc findNameService(FindNameServiceRequest) returns (FindHostListResponse);
+}

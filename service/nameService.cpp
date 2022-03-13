@@ -1,6 +1,7 @@
 #include "nameService.h"
 #include "utils/string_utils.h"
 #include "utils/response_utils.h"
+#include "proxy/NameServiceStoreProxy.h"
 #include <json2pb/rapidjson.h>
 #include <json2pb/pb_to_json.h>
 namespace nameService
@@ -18,11 +19,11 @@ namespace nameService
         document.Parse(body.c_str());
         std::string name = document["name"].GetString();
         auto hostVec = util::split(document["host"].GetString(), ';');
-        std::unordered_set<std::string> hostSet;
-        for (auto host : hostVec)
-        {
-            hostSet.emplace(host);
-        }
+        // std::unordered_set<std::string> hostSet;
+        // for (auto host : hostVec)
+        // {
+        //     hostSet.emplace(host);
+        // }
         butil::IOBufBuilder os;
         RpcResponse response;
         std::string res;
@@ -34,7 +35,10 @@ namespace nameService
             os.move_to(cntl->response_attachment());
             return;
         }
-        int ret = redisImpl.get()->setSet(name, hostSet);
+        // int ret = redisImpl.get()->setSet(name, hostSet);
+        std::vector<bool> healthys(hostVec.size(), true);
+        std::vector<int> weights(hostVec.size(), 100);
+        int ret = proxy::insertAnyLineNameServiceTopMysql(name, hostVec, healthys, weights);
         if (ret == -1)
             util::generateFailResponse(&res);
         else
